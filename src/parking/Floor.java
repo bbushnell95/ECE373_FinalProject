@@ -2,13 +2,21 @@ package parking;
 import java.util.*;
 
 
-public class Floor {
+public class Floor  {
 	private int floorNumber;
 	private int spacesRemaining;
 	private ArrayList<Space> spaces;
 	
 	public Floor(){
-		
+		floorNumber = -1;
+		spacesRemaining = 0;
+		spaces = new ArrayList<Space>();
+	}
+	
+	public Floor(int fN){
+		floorNumber = fN;
+		spacesRemaining = 0;
+		spaces = new ArrayList<Space>();
 	}
 
 	public int getFloorNumber() {
@@ -33,6 +41,10 @@ public class Floor {
 
 	public void setSpaces(ArrayList<Space> spaces) {
 		this.spaces = spaces;
+	}
+	
+	public void addSpace(Space newSpace){
+		spaces.add(newSpace);
 	}
 	
 	public int calcRemainingSpaces(){
