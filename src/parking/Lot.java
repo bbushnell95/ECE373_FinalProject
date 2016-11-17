@@ -8,11 +8,17 @@ public class Lot extends Parking{
 	public Lot(){
 		name = "Unknown";
 		location = "Unknown";
+		spaces = new ArrayList<Space>();
 	}
 	
 	public Lot(String n, String l){
 		name = n;
 		location = l;
+		spaces = new ArrayList<Space>();
+	}
+	
+	public ArrayList<Space> getSpaces(){
+		return spaces;
 	}
 	
 	public int calcRemainingCost(){
@@ -32,5 +38,9 @@ public class Lot extends Parking{
 	public int calcRemainingSpaces() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	public void addSpace(Space s){
+		spaces.add(s);
 	}
 }
