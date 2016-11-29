@@ -33,6 +33,7 @@ public class Driver1 {
 		Space cgFloor1Space1 = new Space();
 		Space cgFloor1Space2 = new Space();
 		Space cgFloor1Space3 = new Space();
+		Space cgFloor1Space4 = new Space();
 		
 		Space cgFloor2Space1 = new Space();
 		Space cgFloor2Space2 = new Space();
@@ -42,31 +43,39 @@ public class Driver1 {
 		Space cgFloor3Space1 = new Space();
 		Space cgFloor3Space2 = new Space();
 		Space cgFloor3Space3 = new Space();
+		Space cgFloor3Space4 = new Space();
 		
 		//Main Gate Garage
 		Space mgFloor1Space1 = new Space();
 		Space mgFloor1Space2 = new Space();
+		Space mgFloor1Space3 = new Space();
+		Space mgFloor1Space4 = new Space();
 		
 		Space mgFloor2Space1 = new Space();
 		Space mgFloor2Space2 = new Space();
 		Space mgFloor2Space3 = new Space();
+		Space mgFloor2Space4 = new Space();
 		
 		Space mgFloor3Space1 = new Space();
 		Space mgFloor3Space2 = new Space();
 		Space mgFloor3Space3 = new Space();
+		Space mgFloor3Space4 = new Space();
 		
 		Space mgFloor4Space1 = new Space();
 		Space mgFloor4Space2 = new Space();
 		Space mgFloor4Space3 = new Space();
+		Space mgFloor4Space4 = new Space();
 		
 		//Second Street Garage
 		Space sgFloor1Space1 = new Space();
 		Space sgFloor1Space2 = new Space();
 		Space sgFloor1Space3 = new Space();
+		Space sgFloor1Space4 = new Space();
 		
 		Space sgFloor2Space1 = new Space();
 		Space sgFloor2Space2 = new Space();
 		Space sgFloor2Space3 = new Space();
+		Space sgFloor2Space4 = new Space();
 		
 		//Zone1 lot
 		Space z1LotSpace1 = new Space();
@@ -88,6 +97,7 @@ public class Driver1 {
 		cgFloor1.addSpace(cgFloor1Space1);
 		cgFloor1.addSpace(cgFloor1Space2);
 		cgFloor1.addSpace(cgFloor1Space3);
+		cgFloor1.addSpace(cgFloor1Space4);
 		
 		cgFloor2.addSpace(cgFloor2Space1);
 		cgFloor2.addSpace(cgFloor2Space2);
@@ -97,31 +107,39 @@ public class Driver1 {
 		cgFloor3.addSpace(cgFloor3Space1);
 		cgFloor3.addSpace(cgFloor3Space2);
 		cgFloor3.addSpace(cgFloor3Space3);
+		cgFloor3.addSpace(cgFloor3Space4);
 		
 		//Main Gate Garage
 		mgFloor1.addSpace(mgFloor1Space1);
 		mgFloor1.addSpace(mgFloor1Space2);
+		mgFloor1.addSpace(mgFloor1Space3);
+		mgFloor1.addSpace(mgFloor1Space4);
 		
 		mgFloor2.addSpace(mgFloor2Space1);
 		mgFloor2.addSpace(mgFloor2Space2);
 		mgFloor2.addSpace(mgFloor2Space3);
+		mgFloor2.addSpace(mgFloor2Space4);
 		
 		mgFloor3.addSpace(mgFloor3Space1);
 		mgFloor3.addSpace(mgFloor3Space2);
 		mgFloor3.addSpace(mgFloor3Space3);
+		mgFloor3.addSpace(mgFloor3Space4);
 		
 		mgFloor4.addSpace(mgFloor4Space1);
 		mgFloor4.addSpace(mgFloor4Space2);
 		mgFloor4.addSpace(mgFloor4Space3);
+		mgFloor4.addSpace(mgFloor4Space4);
 		
 		//Second Street Garage
 		sgFloor1.addSpace(sgFloor1Space1);
 		sgFloor1.addSpace(sgFloor1Space2);
 		sgFloor1.addSpace(sgFloor1Space3);
+		sgFloor1.addSpace(sgFloor1Space4);
 		
 		sgFloor2.addSpace(sgFloor2Space1);
 		sgFloor2.addSpace(sgFloor2Space2);
 		sgFloor2.addSpace(sgFloor2Space3);
+		sgFloor2.addSpace(sgFloor2Space4);
 		
 		//Zone 1 Lot
 		zone1Lot.addSpace(z1LotSpace1);
