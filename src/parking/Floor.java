@@ -1,8 +1,9 @@
 package parking;
+import java.io.Serializable;
 import java.util.*;
 
 
-public class Floor  {
+public class Floor  implements Serializable{
 	private int floorNumber;
 	private int spacesRemaining;
 	private ArrayList<Space> spaces;

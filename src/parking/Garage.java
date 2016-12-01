@@ -6,6 +6,8 @@ public class Garage extends Parking{
 	
 	private ArrayList<Floor> floors;
 	private double cost;
+	private int x;
+	private int y;
 	
 	
 	public Garage(){
@@ -14,10 +16,12 @@ public class Garage extends Parking{
 		floors = new ArrayList<Floor>();
 	}
 	
-	public Garage(String n, String l){
+	public Garage(String n, String l, int x, int y){
 		name = n;
 		location = l;
 		floors = new ArrayList<Floor>();
+		this.x = x;
+		this.y = y;
 	}
 	
 	public ArrayList<Floor> getFloors() {
@@ -46,5 +50,12 @@ public class Garage extends Parking{
 		}
 		
 		return countOfSpaces;
+	}
+
+	public int getY() {
+				return y;
+	}
+	public int getX() {
+		return x;
 	}
 }

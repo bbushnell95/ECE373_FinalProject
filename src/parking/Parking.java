@@ -1,6 +1,8 @@
 package parking;
 
-public abstract class Parking{
+import java.io.Serializable;
+
+public abstract class Parking implements Serializable{
 
 	protected String name;
 	protected String location;

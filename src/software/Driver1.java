@@ -5,11 +5,21 @@ import parking.*;
 public class Driver1 {
 	public static void main(String args[]) {
 		UniversityParking univParking = new UniversityParking();
-		Garage cherryGarage = new Garage("Cherry Garage", "Cherry Ave");
-		Garage mainGateGarage = new Garage("Main Gate Garage", "Euclid Ave");
-		Garage secondStreetGarage = new Garage("2nd Street Garage", "2nd Street");
-		Lot zone1Lot = new Lot("Zone 1", "North of Campus");
-		Lot south6Lot = new Lot("South of 6th", "South of Campus");
+		Garage cherryGarage = new Garage("Cherry Garage", "Cherry Ave", 810, 631);
+		Garage mainGateGarage = new Garage("Main Gate Garage", "Euclid Ave", 43, 382);
+		Garage secondStreetGarage = new Garage("2nd Street Garage", "2nd Street", 519, 378);
+		Lot zone1Lot = new Lot("Zone 1 (2147)", "North of Campus", 730, 31);
+		Lot south6Lot1 = new Lot("South of 6th (7167)", "South of Campus",209 ,830);
+		
+		//spaces havent been added to any of the garages below
+		Garage parkAveGarage = new Garage("Park Ave Garage", "2nd Street", 247, 124);
+		Garage highlandGarage = new Garage("Highland Garage", "2nd Street",595, 39);
+		Garage tyndallAveGarage = new Garage("Tyndall Ave. Garage", "2nd Street", 74, 639);
+		Garage sixthStreetGarage = new Garage("Sixth Street Garage", "2nd Street", 341, 772);
+		Lot zone1Lot1 = new Lot("Zone 1 (2021)", "North of Campus", 607, 138);
+		Lot zone1Lot2= new Lot("Zone 1 (1172)", "North of Campus", 323, 37);
+		Lot zone1Lot3 = new Lot("Zone 1 (6091)", "North of Campus", 623, 784);
+		Lot south6Lot2 = new Lot("South of 6th (8138)", "South of Campus",825 ,823);
 		
 		/*Create floors to add to garages*/
 		//cherry garage
@@ -149,11 +159,11 @@ public class Driver1 {
 		zone1Lot.addSpace(z1LotSpace5);
 		
 		//South of 6 Lot
-		south6Lot.addSpace(s6LotSpace1);
-		south6Lot.addSpace(s6LotSpace2);
-		south6Lot.addSpace(s6LotSpace3);
-		south6Lot.addSpace(s6LotSpace4);
-		south6Lot.addSpace(s6LotSpace5);
+		south6Lot1.addSpace(s6LotSpace1);
+		south6Lot1.addSpace(s6LotSpace2);
+		south6Lot1.addSpace(s6LotSpace3);
+		south6Lot1.addSpace(s6LotSpace4);
+		south6Lot1.addSpace(s6LotSpace5);
 		
 		/*Add floors to Garage*/
 		//Cherry Garage
@@ -176,7 +186,9 @@ public class Driver1 {
 		univParking.addGarage(mainGateGarage);
 		univParking.addGarage(secondStreetGarage);
 		univParking.addLot(zone1Lot);
-		univParking.addLot(south6Lot);
+		univParking.addLot(south6Lot1);
+		
+		 new ParkingGUI("test", univParking); 
 		
 		/*Checking garage info*/
 		for(Garage currGarage: univParking.getGarages()){
@@ -196,11 +208,11 @@ public class Driver1 {
 			System.out.println("\tNumber of Spaces: " + currLot.getSpaces().size());
 		}
 		
-		System.out.println("\nTesting filling spaces: ");
+		/*System.out.println("\nTesting filling spaces: ");
 		
 		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(0).fillSpace();
 		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(1).fillSpace();
-		
+		*/
 		System.out.println("\tNumber of Spaces remaining on floor " + univParking.getGarages().get(0).getFloors().get(0).getFloorNumber() + 
 				" of " + univParking.getGarages().get(0).getName() + ": " + univParking.getGarages().get(0).getFloors().get(0).calcRemainingSpaces());
 		System.out.println("\nTesting Emptying Spaces:");
