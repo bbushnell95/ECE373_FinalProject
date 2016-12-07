@@ -11,7 +11,7 @@ public class Driver1 {
 		Lot zone1Lot = new Lot("Zone 1 (2147)", "North of Campus", 730, 31);
 		Lot south6Lot1 = new Lot("South of 6th (7167)", "South of Campus",209 ,830);
 		
-		//spaces havent been added to any of the garages below
+		//spaces havent been added to any of the garages below (DONE: Brett, 12/7)
 		Garage parkAveGarage = new Garage("Park Ave Garage", "2nd Street", 247, 124);
 		Garage highlandGarage = new Garage("Highland Garage", "2nd Street",595, 39);
 		Garage tyndallAveGarage = new Garage("Tyndall Ave. Garage", "2nd Street", 74, 639);
@@ -36,6 +36,30 @@ public class Driver1 {
 		//2nd Street Garage
 		Floor sgFloor1 = new Floor(1);
 		Floor sgFloor2 = new Floor(2);
+		
+		//Park Avenue Garage
+		Floor pgFloor1 = new Floor(1);
+		Floor pgFloor2 = new Floor (2);
+		Floor pgFloor3 = new Floor(3);
+		Floor pgFloor4 = new Floor(4);
+		
+		//Highland Garage
+		Floor hgFloor1 = new Floor(1);
+		Floor hgFloor2 = new Floor(2);
+		Floor hgFloor3 = new Floor(3);
+		Floor hgFloor4 = new Floor(4);
+		
+		//Tyndall Garage
+		Floor tgFloor1 = new Floor(1);
+		Floor tgFloor2 = new Floor(2);
+		Floor tgFloor3 = new Floor(3);
+		Floor tgFloor4 = new Floor(4);
+		
+		//Sixth Street Garage
+		Floor s6gFloor1 = new Floor(1);
+		Floor s6gFloor2 = new Floor(2);
+		Floor s6gFloor3 = new Floor(3);
+		Floor s6gFloor4 = new Floor(4);
 		
 		
 		/*Create Spaces to add to floors*/
@@ -76,6 +100,90 @@ public class Driver1 {
 		Space mgFloor4Space3 = new Space();
 		Space mgFloor4Space4 = new Space();
 		
+		//Park Ave Garage
+		Space pgFloor1Space1 = new Space();
+		Space pgFloor1Space2 = new Space();
+		Space pgFloor1Space3 = new Space();
+		Space pgFloor1Space4 = new Space();
+		
+		Space pgFloor2Space1 = new Space();
+		Space pgFloor2Space2 = new Space();
+		Space pgFloor2Space3 = new Space();
+		Space pgFloor2Space4 = new Space();
+		
+		Space pgFloor3Space1 = new Space();
+		Space pgFloor3Space2 = new Space();
+		Space pgFloor3Space3 = new Space();
+		Space pgFloor3Space4 = new Space();
+		
+		Space pgFloor4Space1 = new Space();
+		Space pgFloor4Space2 = new Space();
+		Space pgFloor4Space3 = new Space();
+		Space pgFloor4Space4 = new Space();
+		
+		//HighLand Garage
+		Space hgFloor1Space1 = new Space();
+		Space hgFloor1Space2 = new Space();
+		Space hgFloor1Space3 = new Space();
+		Space hgFloor1Space4 = new Space();
+		
+		Space hgFloor2Space1 = new Space();
+		Space hgFloor2Space2 = new Space();
+		Space hgFloor2Space3 = new Space();
+		Space hgFloor2Space4 = new Space();
+		
+		Space hgFloor3Space1 = new Space();
+		Space hgFloor3Space2 = new Space();
+		Space hgFloor3Space3 = new Space();
+		Space hgFloor3Space4 = new Space();
+		
+		Space hgFloor4Space1 = new Space();
+		Space hgFloor4Space2 = new Space();
+		Space hgFloor4Space3 = new Space();
+		Space hgFloor4Space4 = new Space();
+		
+		//Tyndall
+		Space tgFloor1Space1 = new Space();
+		Space tgFloor1Space2 = new Space();
+		Space tgFloor1Space3 = new Space();
+		Space tgFloor1Space4 = new Space();
+		
+		Space tgFloor2Space1 = new Space();
+		Space tgFloor2Space2 = new Space();
+		Space tgFloor2Space3 = new Space();
+		Space tgFloor2Space4 = new Space();
+
+		Space tgFloor3Space1 = new Space();
+		Space tgFloor3Space2 = new Space();
+		Space tgFloor3Space3 = new Space();
+		Space tgFloor3Space4 = new Space();
+		
+		Space tgFloor4Space1 = new Space();
+		Space tgFloor4Space2 = new Space();
+		Space tgFloor4Space3 = new Space();
+		Space tgFloor4Space4 = new Space();
+		
+		//Sixth Street Garage
+		Space s6gFloor1Space1 = new Space();
+		Space s6gFloor1Space2 = new Space();
+		Space s6gFloor1Space3 = new Space();
+		Space s6gFloor1Space4 = new Space();
+		
+		Space s6gFloor2Space1 = new Space();
+		Space s6gFloor2Space2 = new Space();
+		Space s6gFloor2Space3 = new Space();
+		Space s6gFloor2Space4 = new Space();
+		
+		Space s6gFloor3Space1 = new Space();
+		Space s6gFloor3Space2 = new Space();
+		Space s6gFloor3Space3 = new Space();
+		Space s6gFloor3Space4 = new Space();
+		
+		Space s6gFloor4Space1 = new Space();
+		Space s6gFloor4Space2 = new Space();
+		Space s6gFloor4Space3 = new Space();
+		Space s6gFloor4Space4 = new Space();
+		
 		//Second Street Garage
 		Space sgFloor1Space1 = new Space();
 		Space sgFloor1Space2 = new Space();
@@ -94,12 +202,40 @@ public class Driver1 {
 		Space z1LotSpace4 = new Space();
 		Space z1LotSpace5 = new Space();
 		
+		//Zone1 lot 1
+		Space z1Lot1Space1 = new Space();
+		Space z1Lot1Space2 = new Space();
+		Space z1Lot1Space3 = new Space();
+		Space z1Lot1Space4 = new Space();
+		Space z1Lot1Space5 = new Space();
+		
+		//Zone1 lot 2
+		Space z1Lot2Space1 = new Space();
+		Space z1Lot2Space2 = new Space();
+		Space z1Lot2Space3 = new Space();
+		Space z1Lot2Space4 = new Space();
+		Space z1Lot2Space5 = new Space();
+		
+		//Zone1 lot 3
+		Space z1Lot3Space1 = new Space();
+		Space z1Lot3Space2 = new Space();
+		Space z1Lot3Space3 = new Space();
+		Space z1Lot3Space4 = new Space();
+		Space z1Lot3Space5 = new Space();
+		
 		//South6 Lot
 		Space s6LotSpace1 = new Space();
 		Space s6LotSpace2 = new Space();
 		Space s6LotSpace3 = new Space();
 		Space s6LotSpace4 = new Space();
 		Space s6LotSpace5 = new Space();
+		
+		//South6 lot 2
+		Space s6Lot2Space1 = new Space();
+		Space s6Lot2Space2 = new Space();
+		Space s6Lot2Space3 = new Space();
+		Space s6Lot2Space4 = new Space();
+		Space s6Lot2Space5 = new Space();	
 		
 		
 		/*Add spaces to floors*/
@@ -151,6 +287,90 @@ public class Driver1 {
 		sgFloor2.addSpace(sgFloor2Space3);
 		sgFloor2.addSpace(sgFloor2Space4);
 		
+		//Park Ave Garage
+		pgFloor1.addSpace(pgFloor1Space1);
+		pgFloor1.addSpace(pgFloor1Space2);
+		pgFloor1.addSpace(pgFloor1Space3);
+		pgFloor1.addSpace(pgFloor1Space4);
+		
+		pgFloor2.addSpace(pgFloor2Space1);
+		pgFloor2.addSpace(pgFloor2Space2);
+		pgFloor2.addSpace(pgFloor2Space3);
+		pgFloor2.addSpace(pgFloor2Space4);
+		
+		pgFloor3.addSpace(pgFloor3Space1);
+		pgFloor3.addSpace(pgFloor3Space2);
+		pgFloor3.addSpace(pgFloor3Space3);
+		pgFloor3.addSpace(pgFloor3Space4);
+		
+		pgFloor4.addSpace(pgFloor4Space1);
+		pgFloor4.addSpace(pgFloor4Space2);
+		pgFloor4.addSpace(pgFloor4Space3);
+		pgFloor4.addSpace(pgFloor4Space4);
+		
+		//Highland Garage
+		hgFloor1.addSpace(hgFloor1Space1);
+		hgFloor1.addSpace(hgFloor1Space2);
+		hgFloor1.addSpace(hgFloor1Space3);
+		hgFloor1.addSpace(hgFloor1Space4);
+		
+		hgFloor2.addSpace(hgFloor2Space1);
+		hgFloor2.addSpace(hgFloor2Space2);
+		hgFloor2.addSpace(hgFloor2Space3);
+		hgFloor2.addSpace(hgFloor2Space4);
+		
+		hgFloor3.addSpace(hgFloor3Space1);
+		hgFloor3.addSpace(hgFloor3Space2);
+		hgFloor3.addSpace(hgFloor3Space3);
+		hgFloor3.addSpace(hgFloor3Space4);
+		
+		hgFloor4.addSpace(hgFloor4Space1);
+		hgFloor4.addSpace(hgFloor4Space2);
+		hgFloor4.addSpace(hgFloor4Space3);
+		hgFloor4.addSpace(hgFloor4Space4);
+		
+		//Tyndall Garage
+		tgFloor1.addSpace(tgFloor1Space1);
+		tgFloor1.addSpace(tgFloor1Space2);
+		tgFloor1.addSpace(tgFloor1Space3);
+		tgFloor1.addSpace(tgFloor1Space4);
+		
+		tgFloor2.addSpace(tgFloor2Space1);
+		tgFloor2.addSpace(tgFloor2Space2);
+		tgFloor2.addSpace(tgFloor2Space3);
+		tgFloor2.addSpace(tgFloor2Space4);
+		
+		tgFloor3.addSpace(tgFloor3Space1);
+		tgFloor3.addSpace(tgFloor3Space2);
+		tgFloor3.addSpace(tgFloor3Space3);
+		tgFloor3.addSpace(tgFloor3Space4);
+		
+		tgFloor4.addSpace(tgFloor4Space1);
+		tgFloor4.addSpace(tgFloor4Space2);
+		tgFloor4.addSpace(tgFloor4Space3);
+		tgFloor4.addSpace(tgFloor4Space4);
+		
+		//Sixth Street
+		s6gFloor1.addSpace(s6gFloor1Space1);
+		s6gFloor1.addSpace(s6gFloor1Space2);
+		s6gFloor1.addSpace(s6gFloor1Space3);
+		s6gFloor1.addSpace(s6gFloor1Space4);
+		
+		s6gFloor2.addSpace(s6gFloor2Space1);
+		s6gFloor2.addSpace(s6gFloor2Space2);
+		s6gFloor2.addSpace(s6gFloor2Space3);
+		s6gFloor2.addSpace(s6gFloor2Space4);
+		
+		s6gFloor3.addSpace(s6gFloor3Space1);
+		s6gFloor3.addSpace(s6gFloor3Space2);
+		s6gFloor3.addSpace(s6gFloor3Space3);
+		s6gFloor3.addSpace(s6gFloor3Space4);
+		
+		s6gFloor4.addSpace(s6gFloor4Space1);
+		s6gFloor4.addSpace(s6gFloor4Space2);
+		s6gFloor4.addSpace(s6gFloor4Space3);
+		s6gFloor4.addSpace(s6gFloor4Space4);
+		
 		//Zone 1 Lot
 		zone1Lot.addSpace(z1LotSpace1);
 		zone1Lot.addSpace(z1LotSpace2);
@@ -158,12 +378,41 @@ public class Driver1 {
 		zone1Lot.addSpace(z1LotSpace4);
 		zone1Lot.addSpace(z1LotSpace5);
 		
-		//South of 6 Lot
+		//Zone1 lot1
+		zone1Lot1.addSpace(z1Lot1Space1);
+		zone1Lot1.addSpace(z1Lot1Space2);
+		zone1Lot1.addSpace(z1Lot1Space3);
+		zone1Lot1.addSpace(z1Lot1Space4);
+		zone1Lot1.addSpace(z1Lot1Space5);
+		
+		//Zone1 lot2
+		zone1Lot2.addSpace(z1Lot2Space1);
+		zone1Lot2.addSpace(z1Lot2Space2);
+		zone1Lot2.addSpace(z1Lot2Space3);
+		zone1Lot2.addSpace(z1Lot2Space4);
+		zone1Lot2.addSpace(z1Lot2Space5);
+		
+		//Zone1 lot3
+		zone1Lot3.addSpace(z1Lot3Space1);
+		zone1Lot3.addSpace(z1Lot3Space2);
+		zone1Lot3.addSpace(z1Lot3Space3);
+		zone1Lot3.addSpace(z1Lot3Space4);
+		zone1Lot3.addSpace(z1Lot3Space5);
+		
+		//South of 6 Lot1
 		south6Lot1.addSpace(s6LotSpace1);
 		south6Lot1.addSpace(s6LotSpace2);
 		south6Lot1.addSpace(s6LotSpace3);
 		south6Lot1.addSpace(s6LotSpace4);
 		south6Lot1.addSpace(s6LotSpace5);
+		
+		//South of 6 Lot2
+		south6Lot2.addSpace(s6Lot2Space1);
+		south6Lot2.addSpace(s6Lot2Space2);
+		south6Lot2.addSpace(s6Lot2Space3);
+		south6Lot2.addSpace(s6Lot2Space4);
+		south6Lot2.addSpace(s6Lot2Space5);
+		
 		
 		/*Add floors to Garage*/
 		//Cherry Garage
@@ -181,12 +430,45 @@ public class Driver1 {
 		secondStreetGarage.addFloor(sgFloor1);
 		secondStreetGarage.addFloor(sgFloor2);
 		
+		//Park Ave Garage
+		parkAveGarage.addFloor(pgFloor1);
+		parkAveGarage.addFloor(pgFloor2);
+		parkAveGarage.addFloor(pgFloor3);
+		parkAveGarage.addFloor(pgFloor4);
+		
+		//Highland garage
+		highlandGarage.addFloor(hgFloor1);
+		highlandGarage.addFloor(hgFloor2);
+		highlandGarage.addFloor(hgFloor3);
+		highlandGarage.addFloor(hgFloor4);
+		
+		//tyndall garage
+		tyndallAveGarage.addFloor(tgFloor1);
+		tyndallAveGarage.addFloor(tgFloor2);
+		tyndallAveGarage.addFloor(tgFloor3);
+		tyndallAveGarage.addFloor(tgFloor4);
+		
+		//Sixth Street Garage
+		sixthStreetGarage.addFloor(s6gFloor1);
+		sixthStreetGarage.addFloor(s6gFloor2);
+		sixthStreetGarage.addFloor(s6gFloor3);
+		sixthStreetGarage.addFloor(s6gFloor4);
+		
+		
 		/*Add Garages and lots to univParking*/
 		univParking.addGarage(cherryGarage);
 		univParking.addGarage(mainGateGarage);
 		univParking.addGarage(secondStreetGarage);
+		univParking.addGarage(parkAveGarage);
+		univParking.addGarage(highlandGarage);
+		univParking.addGarage(tyndallAveGarage);
+		univParking.addGarage(sixthStreetGarage);
 		univParking.addLot(zone1Lot);
+		univParking.addLot(zone1Lot1);
+		univParking.addLot(zone1Lot2);
+		univParking.addLot(zone1Lot3);
 		univParking.addLot(south6Lot1);
+		univParking.addLot(south6Lot2);
 		
 		 new ParkingGUI("test", univParking); 
 		
