@@ -7,6 +7,7 @@ public class Space implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private boolean isFull;
 	private Calendar endTime;
+	private String userName = null;
 	
 	public Space(){
 		isFull = false;
@@ -16,13 +17,23 @@ public class Space implements Serializable{
 		return isFull;
 	}
 	
-	public void fillSpace(Calendar time){
+	public boolean isOccupiedBy(String name) {
+		return userName.equals(name);
+	}
+
+	public String getName() {
+		return userName;
+	}
+	
+	public void fillSpace(Calendar time, String name){
 		endTime = time;
 		isFull = true;
+		userName = name;
 	}
 	
 	public void emptySpace(){
 		isFull = false;
+		userName = "";
 	}
 
 	public void checkExpiration() {

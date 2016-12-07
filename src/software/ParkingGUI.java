@@ -14,6 +14,7 @@ import java.awt.GridLayout;
 //Event Imports
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -25,8 +26,14 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
 //Project Imports
@@ -35,12 +42,14 @@ import parking.Garage;
 import parking.Lot;
 import parking.Parking;
 import parking.Space;
+import parking.User;
 
 public class ParkingGUI extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	
 	//Swing Fields
+	private JFrame mainFrame;
 	private JFrame popUpFrame;
 	private JFrame errorFrame;
 	private JTextField lengthBox;
@@ -50,6 +59,15 @@ public class ParkingGUI extends JFrame{
 	private JComboBox<String> minTimeBox;
 	private JComboBox<String> lengthComboBox;
 	private JComboBox<String> apTimeBox;
+	
+	private JMenuBar menuBar;
+	private JMenuItem menuLogin;
+	private JMenuItem menuLogout;
+	private JMenuItem menuReserve;
+	private JMenuItem menuAddUser;
+	private JMenuItem menuDeleteUser;
+	private JMenuItem menuExit;
+	private JTextArea parkingStatus;
 	
 	//Other Project Fields
 	private UniversityParking university;
@@ -67,11 +85,12 @@ public class ParkingGUI extends JFrame{
 	
 	public ParkingGUI(String windowTitle, UniversityParking univ1) 
 	{
-		//use the univ passed throught the drive if no saved file to load
+		//use the univ passed through the drive if no saved file to load
+		//TODO:: this requires a saved file.. 
 		university = univ1;
-		university = UniversityParking.loadData(univ1);
+	//	university = UniversityParking.loadData(univ1);
 		university.checkExpiration();
-		createTimePopUp("Welcome to University Parking!");
+		createMain("University Parking");
 	}
 	
 	public void errorMessage(String errorMessage)
@@ -93,13 +112,178 @@ public class ParkingGUI extends JFrame{
 			errorFrame.setVisible(true);
 	}
 	
+/*------------------------------------------  MAIN WINDOW ---------------------------------------*/	
+
+	void createMain(String title){
+		mainFrame = new JFrame(title);
+		mainFrame.setSize(1000, 1000);
+		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		
+		// Menu
+		menuBar = new JMenuBar();
+
+		menuLogin = new JMenuItem("Login");
+		menuLogin.setMnemonic(KeyEvent.VK_L);
+		menuLogin.getAccessibleContext().setAccessibleDescription("Login to University Parking");
+		menuLogin.addActionListener(new loginListener());
+		menuBar.add(menuLogin);
+		
+		menuLogout = new JMenuItem("Logout");
+		menuLogout.setMnemonic(KeyEvent.VK_T);
+		menuLogout.getAccessibleContext().setAccessibleDescription("Logout of University Parking");
+		menuLogout.addActionListener(new logoutListener());
+		menuLogout.setVisible(false);
+		menuBar.add(menuLogout);
+		
+		menuReserve = new JMenuItem("Reserve");
+		menuReserve.setMnemonic(KeyEvent.VK_R);
+		menuReserve.getAccessibleContext().setAccessibleDescription("Reserve a parking space");
+		menuReserve.addActionListener(new reserveListener());
+		menuReserve.setVisible(false);
+		menuBar.add(menuReserve);
+		
+		menuAddUser = new JMenuItem("Add User");
+		menuAddUser.setMnemonic(KeyEvent.VK_A);
+		menuAddUser.getAccessibleContext().setAccessibleDescription("Add User");
+		menuAddUser.addActionListener(new addUserListener());
+		menuAddUser.setVisible(false);
+		menuBar.add(menuAddUser);
+		
+		menuDeleteUser = new JMenuItem("Delete User");
+		menuDeleteUser.setMnemonic(KeyEvent.VK_D);
+		menuDeleteUser.getAccessibleContext().setAccessibleDescription("Delete User");
+		menuDeleteUser.addActionListener(new deleteUserListener());
+		menuDeleteUser.setVisible(false);
+		menuBar.add(menuDeleteUser);
+		
+		menuExit = new JMenuItem("Exit",KeyEvent.VK_X);
+		menuExit.getAccessibleContext().setAccessibleDescription("Exit the parking application");
+		menuExit.addActionListener(new exitListener());
+		menuBar.add(menuExit);
+		
+		parkingStatus = new JTextArea();
+		
+		mainFrame.getContentPane().add(parkingStatus);
+		mainFrame.setJMenuBar(menuBar);
+		mainFrame.setVisible(true);
+	}
+	
+	void updateParkingStatus() {
+		
+		int i;
+		/*Checking garage info*/
+		parkingStatus.setText("");
+		
+		parkingStatus.append("Users\n");
+		for (User currUser: university.getUsers()) {
+			parkingStatus.append(currUser.getName() + " ");
+		}
+		parkingStatus.append("\n\nGarages\n");
+		for(Garage currGarage: university.getGarages()){
+			
+			parkingStatus.append(currGarage.getName() + " [" + currGarage.getLocation() + "]\n");
+		
+			/*Checking number of spaces on each floor of cherry Garage*/
+			for(Floor currFloor: currGarage.getFloors()){
+				parkingStatus.append("\tFloor " + currFloor.getFloorNumber() + ":");
+				i = 0;
+				for (Space currSpace: currFloor.getSpaces()) {
+					i++;
+					parkingStatus.append(" Space " + i + ": ");
+					if (currSpace.checkIfFull()) {
+						parkingStatus.append(currSpace.getName());
+					}
+					else {
+						parkingStatus.append("free");
+					}
+				}
+				parkingStatus.append("\n");
+			}
+			parkingStatus.append("\n");
+		}
+		/*Checking lot info*/
+		parkingStatus.append("\nLots\n");
+		for(Lot currLot: university.getLots()){
+			parkingStatus.append(currLot.getName() + " [" + currLot.getLocation() + "]\n\t");
+			i = 0;
+			for (Space currSpace: currLot.getSpaces()) {
+				i++;
+				parkingStatus.append(" Space " + i + ": ");
+				if (currSpace.checkIfFull()) {
+					parkingStatus.append(currSpace.getName());
+				}
+				else {
+					parkingStatus.append("free");
+				}
+			}
+			parkingStatus.append("\n");
+		}
+		
+	}
+	
+	void updateUserParkingStatus() {
+		
+		int i;
+		/*Checking garage info*/
+		parkingStatus.setText("");
+		
+		parkingStatus.append("User: " + university.getCurrentUser() + "\n");
+		parkingStatus.append("\n\nGarages\n");
+		for(Garage currGarage: university.getGarages()){
+			
+			parkingStatus.append(currGarage.getName() + " [" + currGarage.getLocation() + "]\n");
+		
+			/*Checking number of spaces on each floor of cherry Garage*/
+			for(Floor currFloor: currGarage.getFloors()){
+				parkingStatus.append("\tFloor " + currFloor.getFloorNumber() + ":");
+				i = 0;
+				for (Space currSpace: currFloor.getSpaces()) {
+					i++;
+					parkingStatus.append(" Space " + i + ": ");
+					if (currSpace.checkIfFull()) {
+						if (currSpace.getName().equals(university.getCurrentUser())) {
+							parkingStatus.append(currSpace.getName());
+						}
+						else {
+							parkingStatus.append("occupied");
+							
+						}
+					}
+					else {
+						parkingStatus.append("free");
+					}
+				}
+				parkingStatus.append("\n");
+			}
+			parkingStatus.append("\n");
+		}
+		/*Checking lot info*/
+		parkingStatus.append("\nLots\n");
+		for(Lot currLot: university.getLots()){
+			parkingStatus.append(currLot.getName() + " [" + currLot.getLocation() + "]\n\t");
+			i = 0;
+			for (Space currSpace: currLot.getSpaces()) {
+				i++;
+				parkingStatus.append(" Space " + i + ": ");
+				if (currSpace.checkIfFull()) {
+					parkingStatus.append(currSpace.getName());
+				}
+				else {
+					parkingStatus.append("free");
+				}
+			}
+			parkingStatus.append("\n");
+		}
+		
+	}
+
 /*------------------------------------------POP UP WINDOWS---------------------------------------*/	
 	void createTimePopUp(String title){
 		//set frame properties
 		popUpFrame = new JFrame(title);
 		popUpFrame.setSize(500, 300);
 		popUpFrame.setLayout(new GridLayout(0,1));
-		popUpFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		popUpFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
 		//create JLabels
 		JLabel startTimeText = new JLabel("When would you like to reserve a spot?:", SwingConstants.CENTER);
@@ -158,7 +342,7 @@ public class ParkingGUI extends JFrame{
 		popUpFrame = new JFrame("Pick a Garage");
 		popUpFrame.setSize(1000, 1000);
 		popUpFrame.setLayout(new FlowLayout());
-		popUpFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		popUpFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		
 		//Create JLabel
 		JLabel startTimeText = new JLabel("<html><br/><br/>Pick a Garage! Clicking anywhere on the map " +
@@ -285,7 +469,7 @@ public class ParkingGUI extends JFrame{
 		text6.setFont(new Font("Serif", Font.BOLD, 14));
 	    
 		//Create End Button
-		endButton = new JButton("End");
+		endButton = new JButton("Done");
 		endButton.addActionListener(new EndButtonListener());
 		
 		//Add Components to the JFrame
@@ -306,7 +490,97 @@ public class ParkingGUI extends JFrame{
 	}
 
 /*----------------------------------------------ACTION LISTENERS----------------------------*/
-	
+
+	private class loginListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e) 
+		{
+			String loginName = JOptionPane.showInputDialog(mainFrame, "Enter user name");
+			if (loginName != "") {
+				switch (university.login(loginName)) {
+				case 0:
+					menuLogin.setVisible(false);
+					menuLogout.setVisible(true);
+					menuReserve.setVisible(true);
+					menuAddUser.setVisible(false);
+					menuDeleteUser.setVisible(false);
+					updateUserParkingStatus();
+					break;
+				case 1:
+					menuLogin.setVisible(false);
+					menuLogout.setVisible(true);
+					menuReserve.setVisible(false);
+					menuAddUser.setVisible(true);
+					menuDeleteUser.setVisible(true);
+					updateParkingStatus();
+					break;
+				default:
+					JOptionPane.showMessageDialog(mainFrame,"Unknown user: " + loginName);
+				}
+			}
+		}
+	}
+
+	private class logoutListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e) 
+		{
+			university.logout();
+			menuLogin.setVisible(true);
+			menuLogout.setVisible(false);
+			menuReserve.setVisible(false);
+			menuAddUser.setVisible(false);
+			menuDeleteUser.setVisible(false);
+			parkingStatus.setText("");
+		}
+	}
+
+private class reserveListener implements ActionListener
+{
+	public void actionPerformed(ActionEvent e) //this is the method MenuListener must implement, as it comes from the ActionListener interface.
+	{
+		createTimePopUp("Welcome to University Parking!");
+	}
+}
+
+private class addUserListener implements ActionListener
+{
+	public void actionPerformed(ActionEvent e) 
+	{
+		String userName = JOptionPane.showInputDialog(mainFrame, "Enter user name to add");
+		if (university.addUser(userName) == -1) {
+			JOptionPane.showMessageDialog(mainFrame,"user already exists: " + userName);
+		}
+		else {
+			JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " added");
+		}
+		updateParkingStatus();
+	}
+}
+
+private class deleteUserListener implements ActionListener
+{
+	public void actionPerformed(ActionEvent e)
+	{
+		String userName = JOptionPane.showInputDialog(mainFrame, "Enter user name to delete");
+		if (university.deleteUser(userName) == 0) {
+			JOptionPane.showMessageDialog(mainFrame,"could not find user: " + userName);
+		}
+		else {
+			JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " deleted");
+		}
+		updateParkingStatus();
+	}
+}
+
+private class exitListener implements ActionListener
+{
+	public void actionPerformed(ActionEvent e) 
+	{
+		System.exit(0);
+	}
+}
+		
 private class LevelButtonListener implements ActionListener
 {
 	public void actionPerformed(ActionEvent e) //this is the method MenuListener must implement, as it comes from the ActionListener interface.
@@ -333,11 +607,10 @@ private class SpaceButtonListener implements ActionListener
 		int spaceNum = Integer.parseInt(((JButton) e.getSource()).getText().substring(6));
 		userSpotNum = spaceNum;
 		userSpot = userSpaces.get(spaceNum-1);
-		userSpot.fillSpace(endTime);
+		userSpot.fillSpace(endTime, university.getCurrentUser());
 		popUpFrame.setVisible(false);
 		popUpFrame.dispose();
-		createEndPopUp("Pick A Spot");
-		
+		createEndPopUp("Pick A Spot");	
 	}
 }
 
@@ -347,7 +620,8 @@ private class EndButtonListener implements ActionListener
 	{
 		UniversityParking.saveData(university);
 		popUpFrame.setVisible(false);
-		popUpFrame.dispose();		
+		popUpFrame.dispose();
+		updateUserParkingStatus();
 	}
 }
 	
