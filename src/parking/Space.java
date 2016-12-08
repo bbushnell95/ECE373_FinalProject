@@ -7,8 +7,8 @@ public class Space implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private boolean isFull;
 	private Calendar endTime;
-	private String userName = null;
-	private String location = null;
+	private String userName;
+	private String location;
 	
 	public String getLocation() {
 		return location;
@@ -21,11 +21,13 @@ public class Space implements Serializable{
 	public Space(){
 		isFull = false;
 		location = "unknown";
+		userName = "";
 	}
 	
 	public Space(String l){
 		isFull = false;
 		location = l;
+		userName = "";
 	}
 	
 	public boolean checkIfFull(){

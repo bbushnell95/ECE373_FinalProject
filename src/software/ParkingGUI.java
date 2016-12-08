@@ -534,6 +534,7 @@ public class ParkingGUI extends JFrame{
 					menuLogin.setVisible(false);
 					menuLogout.setVisible(true);
 					menuReserve.setVisible(true);
+					menuNewUser.setVisible(false);
 					menuAddUser.setVisible(false);
 					menuDeleteUser.setVisible(false);
 					updateUserParkingStatus();
@@ -542,6 +543,7 @@ public class ParkingGUI extends JFrame{
 					menuLogin.setVisible(false);
 					menuLogout.setVisible(true);
 					menuReserve.setVisible(false);
+					menuNewUser.setVisible(false);
 					menuAddUser.setVisible(true);
 					menuDeleteUser.setVisible(true);
 					updateParkingStatus();
@@ -580,11 +582,18 @@ private class newUserListener implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		String userName = JOptionPane.showInputDialog(mainFrame, "Enter user name to add");
-		if (university.addUser(userName) == -1) {
-			JOptionPane.showMessageDialog(mainFrame,"user already exists: " + userName);
-		}
-		else {
-			JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " added");
+		if(userName != null){
+			if(!userName.equals("")){
+				if (university.addUser(userName) == -1) {
+					JOptionPane.showMessageDialog(mainFrame,"user already exists: " + userName);
+				}
+				else {
+					JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " added");
+				}
+			}
+			else{
+				JOptionPane.showMessageDialog(mainFrame, "Cannot leave user name blank, please try again");
+			}
 		}
 	}
 }
@@ -593,11 +602,18 @@ private class addUserListener implements ActionListener
 	public void actionPerformed(ActionEvent e) 
 	{
 		String userName = JOptionPane.showInputDialog(mainFrame, "Enter user name to add");
-		if (university.addUser(userName) == -1) {
-			JOptionPane.showMessageDialog(mainFrame,"user already exists: " + userName);
-		}
-		else {
-			JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " added");
+		if(userName != null){
+			if(!userName.equals("")){
+				if (university.addUser(userName) == -1) {
+					JOptionPane.showMessageDialog(mainFrame,"user already exists: " + userName);
+				}
+				else {
+					JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " added");
+				}
+			}
+			else{
+				JOptionPane.showMessageDialog(mainFrame, "Cannot leave user name blank, please try again");
+			}
 		}
 		updateParkingStatus();
 	}
@@ -608,11 +624,18 @@ private class deleteUserListener implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		String userName = JOptionPane.showInputDialog(mainFrame, "Enter user name to delete");
-		if (university.deleteUser(userName) == 0) {
-			JOptionPane.showMessageDialog(mainFrame,"could not find user: " + userName);
-		}
-		else {
-			JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " deleted");
+		if(userName != null){
+			if(!userName.equals("")){
+				if (university.deleteUser(userName) == 0) {
+					JOptionPane.showMessageDialog(mainFrame,"could not find user: " + userName);
+				}
+				else {
+					JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " deleted");
+				}
+			}
+			else{
+				JOptionPane.showMessageDialog(mainFrame, "Cannot leave userName blank, please try again.");
+			}
 		}
 		updateParkingStatus();
 	}
