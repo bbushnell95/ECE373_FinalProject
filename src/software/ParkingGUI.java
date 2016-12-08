@@ -146,6 +146,14 @@ public class ParkingGUI extends JFrame{
 		menuLogout.setVisible(false);
 		menuBar.add(menuLogout);
 		
+		menuNewUser = new JMenuItem("New User");
+		menuNewUser.setMnemonic(KeyEvent.VK_N);
+		menuNewUser.getAccessibleContext().setAccessibleDescription("Add a new User to University Parking");
+		menuNewUser.addActionListener(new newUserListener());
+		menuNewUser.setVisible(true);
+		menuBar.add(menuNewUser);
+		
+		
 		menuReserve = new JMenuItem("Reserve");
 		menuReserve.setMnemonic(KeyEvent.VK_R);
 		menuReserve.getAccessibleContext().setAccessibleDescription("Reserve a parking space");
@@ -567,6 +575,19 @@ private class reserveListener implements ActionListener
 	}
 }
 
+private class newUserListener implements ActionListener 
+{
+	public void actionPerformed(ActionEvent e)
+	{
+		String userName = JOptionPane.showInputDialog(mainFrame, "Enter user name to add");
+		if (university.addUser(userName) == -1) {
+			JOptionPane.showMessageDialog(mainFrame,"user already exists: " + userName);
+		}
+		else {
+			JOptionPane.showMessageDialog(mainFrame,"user: " + userName + " added");
+		}
+	}
+}
 private class addUserListener implements ActionListener
 {
 	public void actionPerformed(ActionEvent e) 
