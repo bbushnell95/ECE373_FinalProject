@@ -729,6 +729,7 @@ private class NextButtonListener implements ActionListener
 	public void actionPerformed(ActionEvent e) //this is the method MenuListener must implement, as it comes from the ActionListener interface.
 	{
 		//get the user info
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
 		lengthTime = Integer.parseInt(lengthBox.getText());
 		String ap = (String) apTimeBox.getSelectedItem();
 		int hrTime = Integer.parseInt((String) hrTimeBox.getSelectedItem());
@@ -742,7 +743,10 @@ private class NextButtonListener implements ActionListener
 		else if (ap == "am" && hrTime==12){
 			hrTime =0;	
 		}
+		
+		
 		Calendar now = Calendar.getInstance();
+		System.out.println(dateFormat.format(now.getTime()));
 		startTime = Calendar.getInstance();
 		startTime.set(now.getTime().getYear(),now.getTime().getMonth(),now.getTime().getDate(),hrTime, minTime);
 		endTime = (Calendar) startTime.clone();
@@ -765,6 +769,15 @@ private class NextButtonListener implements ActionListener
 		{
 			error = true;
 			errorMessage("The max time to reserve a spot is a month! Try Again");
+		}
+		if(now.getTime().getHours() > hrTime ){
+			error = true;
+			errorMessage("Start time must be after the current time! Try Again");
+		}
+		
+		if(now.getTime().getHours() < hrTime && now.getTime().getMinutes() > minTime ){
+			error = true;
+			errorMessage("Start time must be after the current time! Try Again");
 		}
 		if (!error)
 		{

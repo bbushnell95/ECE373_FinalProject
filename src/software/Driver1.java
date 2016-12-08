@@ -4,6 +4,9 @@ import parking.*;
 
 public class Driver1 {
 	public static void main(String args[]) {
+		
+		
+		
 		UniversityParking univParking = new UniversityParking();
 		Garage cherryGarage = new Garage("Cherry Garage", "Cherry Ave", 810, 631);
 		Garage mainGateGarage = new Garage("Main Gate Garage", "Euclid Ave", 43, 382);
