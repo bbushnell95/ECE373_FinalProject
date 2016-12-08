@@ -576,6 +576,7 @@ public class ParkingGUI extends JFrame{
 			menuLogin.setVisible(true);
 			menuLogout.setVisible(false);
 			menuReserve.setVisible(false);
+			menuNewUser.setVisible(true);
 			menuAddUser.setVisible(false);
 			menuDeleteUser.setVisible(false);
 			parkingStatus.setText("");

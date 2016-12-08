@@ -194,10 +194,12 @@ public class UniversityParking implements Serializable{
 		try
 		{
 			fileIn = new FileInputStream("universityparking.ser");
-			objIn = new ObjectInputStream(fileIn);
-			univ = (UniversityParking) objIn.readObject();
-			objIn.close();
-			fileIn.close();
+			if (fileIn != null) {
+				objIn = new ObjectInputStream(fileIn);
+				univ = (UniversityParking) objIn.readObject();
+				objIn.close();
+				fileIn.close();
+			}
 		}
 		catch(Exception i)
 		{

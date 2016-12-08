@@ -1,8 +1,9 @@
 package parking;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Garage extends Parking{
+public class Garage extends Parking implements Serializable{
 	
 	/**
 	 * 
