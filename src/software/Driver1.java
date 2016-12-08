@@ -64,178 +64,178 @@ public class Driver1 {
 		
 		/*Create Spaces to add to floors*/
 		//Cherry Garage
-		Space cgFloor1Space1 = new Space();
-		Space cgFloor1Space2 = new Space();
-		Space cgFloor1Space3 = new Space();
-		Space cgFloor1Space4 = new Space();
+		Space cgFloor1Space1 = new Space("Cherry Garage, Floor 1, Space 1");
+		Space cgFloor1Space2 = new Space("Cherry Garage, Floor 1, Space 2");
+		Space cgFloor1Space3 = new Space("Cherry Garage, Floor 1, Space 3");
+		Space cgFloor1Space4 = new Space("Cherry Garage, Floor 1, Space 4");
 		
-		Space cgFloor2Space1 = new Space();
-		Space cgFloor2Space2 = new Space();
-		Space cgFloor2Space3 = new Space();
-		Space cgFloor2Space4 = new Space();
+		Space cgFloor2Space1 = new Space("Cherry Garage, Floor 2, Space 1");
+		Space cgFloor2Space2 = new Space("Cherry Garage, Floor 2, Space 2");
+		Space cgFloor2Space3 = new Space("Cherry Garage, Floor 2, Space 3");
+		Space cgFloor2Space4 = new Space("Cherry Garage, Floor 2, Space 4");
 		
-		Space cgFloor3Space1 = new Space();
-		Space cgFloor3Space2 = new Space();
-		Space cgFloor3Space3 = new Space();
-		Space cgFloor3Space4 = new Space();
+		Space cgFloor3Space1 = new Space("Cherry Garage, Floor 3, Space 1");
+		Space cgFloor3Space2 = new Space("Cherry Garage, Floor 3, Space 2");
+		Space cgFloor3Space3 = new Space("Cherry Garage, Floor 3, Space 3");
+		Space cgFloor3Space4 = new Space("Cherry Garage, Floor 3, Space 4");
 		
 		//Main Gate Garage
-		Space mgFloor1Space1 = new Space();
-		Space mgFloor1Space2 = new Space();
-		Space mgFloor1Space3 = new Space();
-		Space mgFloor1Space4 = new Space();
+		Space mgFloor1Space1 = new Space("Main Gate Garage, Floor 1, Space 1");
+		Space mgFloor1Space2 = new Space("Main Gate Garage, Floor 1, Space 2");
+		Space mgFloor1Space3 = new Space("Main Gate Garage, Floor 1, Space 3");
+		Space mgFloor1Space4 = new Space("Main Gate Garage, Floor 1, Space 4");
 		
-		Space mgFloor2Space1 = new Space();
-		Space mgFloor2Space2 = new Space();
-		Space mgFloor2Space3 = new Space();
-		Space mgFloor2Space4 = new Space();
+		Space mgFloor2Space1 = new Space("Main Gate Garage, Floor 2, Space 1");
+		Space mgFloor2Space2 = new Space("Main Gate Garage, Floor 2, Space 2");
+		Space mgFloor2Space3 = new Space("Main Gate Garage, Floor 2, Space 3");
+		Space mgFloor2Space4 = new Space("Main Gate Garage, Floor 2, Space 4");
 		
-		Space mgFloor3Space1 = new Space();
-		Space mgFloor3Space2 = new Space();
-		Space mgFloor3Space3 = new Space();
-		Space mgFloor3Space4 = new Space();
+		Space mgFloor3Space1 = new Space("Main Gate Garage, Floor 3, Space 1");
+		Space mgFloor3Space2 = new Space("Main Gate Garage, Floor 3, Space 2");
+		Space mgFloor3Space3 = new Space("Main Gate Garage, Floor 3, Space 3");
+		Space mgFloor3Space4 = new Space("Main Gate Garage, Floor 3, Space 4");
 		
-		Space mgFloor4Space1 = new Space();
-		Space mgFloor4Space2 = new Space();
-		Space mgFloor4Space3 = new Space();
-		Space mgFloor4Space4 = new Space();
+		Space mgFloor4Space1 = new Space("Main Gate Garage, Floor 4, Space 1");
+		Space mgFloor4Space2 = new Space("Main Gate Garage, Floor 4, Space 2");
+		Space mgFloor4Space3 = new Space("Main Gate Garage, Floor 4, Space 3");
+		Space mgFloor4Space4 = new Space("Main Gate Garage, Floor 4, Space 4");
 		
 		//Park Ave Garage
-		Space pgFloor1Space1 = new Space();
-		Space pgFloor1Space2 = new Space();
-		Space pgFloor1Space3 = new Space();
-		Space pgFloor1Space4 = new Space();
+		Space pgFloor1Space1 = new Space("Park Ave Garage, Floor 1, Space 1");
+		Space pgFloor1Space2 = new Space("Park Ave Garage, Floor 1, Space 2");
+		Space pgFloor1Space3 = new Space("Park Ave Garage, Floor 1, Space 3");
+		Space pgFloor1Space4 = new Space("Park Ave Garage, Floor 1, Space 4");
 		
-		Space pgFloor2Space1 = new Space();
-		Space pgFloor2Space2 = new Space();
-		Space pgFloor2Space3 = new Space();
-		Space pgFloor2Space4 = new Space();
+		Space pgFloor2Space1 = new Space("Park Ave Garage, Floor 2, Space 1");
+		Space pgFloor2Space2 = new Space("Park Ave Garage, Floor 2, Space 2");
+		Space pgFloor2Space3 = new Space("Park Ave Garage, Floor 2, Space 3");
+		Space pgFloor2Space4 = new Space("Park Ave Garage, Floor 2, Space 4");
 		
-		Space pgFloor3Space1 = new Space();
-		Space pgFloor3Space2 = new Space();
-		Space pgFloor3Space3 = new Space();
-		Space pgFloor3Space4 = new Space();
+		Space pgFloor3Space1 = new Space("Park Ave Garage, Floor 3, Space 1");
+		Space pgFloor3Space2 = new Space("Park Ave Garage, Floor 3, Space 2");
+		Space pgFloor3Space3 = new Space("Park Ave Garage, Floor 3, Space 3");
+		Space pgFloor3Space4 = new Space("Park Ave Garage, Floor 3, Space 4");
 		
-		Space pgFloor4Space1 = new Space();
-		Space pgFloor4Space2 = new Space();
-		Space pgFloor4Space3 = new Space();
-		Space pgFloor4Space4 = new Space();
+		Space pgFloor4Space1 = new Space("Park Ave Garage, Floor 4, Space 1");
+		Space pgFloor4Space2 = new Space("Park Ave Garage, Floor 4, Space 2");
+		Space pgFloor4Space3 = new Space("Park Ave Garage, Floor 4, Space 3");
+		Space pgFloor4Space4 = new Space("Park Ave Garage, Floor 4, Space 4");
 		
 		//HighLand Garage
-		Space hgFloor1Space1 = new Space();
-		Space hgFloor1Space2 = new Space();
-		Space hgFloor1Space3 = new Space();
-		Space hgFloor1Space4 = new Space();
+		Space hgFloor1Space1 = new Space("Highland Garage, Floor 1, Space 1");
+		Space hgFloor1Space2 = new Space("Highland Garage, Floor 1, Space 2");
+		Space hgFloor1Space3 = new Space("Highland Garage, Floor 1, Space 3");
+		Space hgFloor1Space4 = new Space("Highland Garage, Floor 1, Space 4");
 		
-		Space hgFloor2Space1 = new Space();
-		Space hgFloor2Space2 = new Space();
-		Space hgFloor2Space3 = new Space();
-		Space hgFloor2Space4 = new Space();
+		Space hgFloor2Space1 = new Space("Highland Garage, Floor 2, Space 1");
+		Space hgFloor2Space2 = new Space("Highland Garage, Floor 2, Space 2");
+		Space hgFloor2Space3 = new Space("Highland Garage, Floor 2, Space 3");
+		Space hgFloor2Space4 = new Space("Highland Garage, Floor 2, Space 4");
 		
-		Space hgFloor3Space1 = new Space();
-		Space hgFloor3Space2 = new Space();
-		Space hgFloor3Space3 = new Space();
-		Space hgFloor3Space4 = new Space();
+		Space hgFloor3Space1 = new Space("Highland Garage, Floor 3, Space 1");
+		Space hgFloor3Space2 = new Space("Highland Garage, Floor 3, Space 2");
+		Space hgFloor3Space3 = new Space("Highland Garage, Floor 3, Space 3");
+		Space hgFloor3Space4 = new Space("Highland Garage, Floor 3, Space 4");
 		
-		Space hgFloor4Space1 = new Space();
-		Space hgFloor4Space2 = new Space();
-		Space hgFloor4Space3 = new Space();
-		Space hgFloor4Space4 = new Space();
+		Space hgFloor4Space1 = new Space("Highland Garage, Floor 4, Space 1");
+		Space hgFloor4Space2 = new Space("Highland Garage, Floor 4, Space 2");
+		Space hgFloor4Space3 = new Space("Highland Garage, Floor 4, Space 3");
+		Space hgFloor4Space4 = new Space("Highland Garage, Floor 4, Space 4");
 		
 		//Tyndall
-		Space tgFloor1Space1 = new Space();
-		Space tgFloor1Space2 = new Space();
-		Space tgFloor1Space3 = new Space();
-		Space tgFloor1Space4 = new Space();
+		Space tgFloor1Space1 = new Space("Tyndall Ave Garage, Floor 1, Space 1");
+		Space tgFloor1Space2 = new Space("Tyndall Ave Garage, Floor 1, Space 2");
+		Space tgFloor1Space3 = new Space("Tyndall Ave Garage, Floor 1, Space 3");
+		Space tgFloor1Space4 = new Space("Tyndall Ave Garage, Floor 1, Space 4");
 		
-		Space tgFloor2Space1 = new Space();
-		Space tgFloor2Space2 = new Space();
-		Space tgFloor2Space3 = new Space();
-		Space tgFloor2Space4 = new Space();
+		Space tgFloor2Space1 = new Space("Tyndall Ave Garage, Floor 2, Space 1");
+		Space tgFloor2Space2 = new Space("Tyndall Ave Garage, Floor 2, Space 2");
+		Space tgFloor2Space3 = new Space("Tyndall Ave Garage, Floor 2, Space 3");
+		Space tgFloor2Space4 = new Space("Tyndall Ave Garage, Floor 2, Space 4");
 
-		Space tgFloor3Space1 = new Space();
-		Space tgFloor3Space2 = new Space();
-		Space tgFloor3Space3 = new Space();
-		Space tgFloor3Space4 = new Space();
+		Space tgFloor3Space1 = new Space("Tyndall Ave Garage, Floor 3, Space 1");
+		Space tgFloor3Space2 = new Space("Tyndall Ave Garage, Floor 3, Space 2");
+		Space tgFloor3Space3 = new Space("Tyndall Ave Garage, Floor 3, Space 3");
+		Space tgFloor3Space4 = new Space("Tyndall Ave Garage, Floor 3, Space 4");
 		
-		Space tgFloor4Space1 = new Space();
-		Space tgFloor4Space2 = new Space();
-		Space tgFloor4Space3 = new Space();
-		Space tgFloor4Space4 = new Space();
+		Space tgFloor4Space1 = new Space("Tyndall Ave Garage, Floor 4, Space 1");
+		Space tgFloor4Space2 = new Space("Tyndall Ave Garage, Floor 4, Space 2");
+		Space tgFloor4Space3 = new Space("Tyndall Ave Garage, Floor 4, Space 3");
+		Space tgFloor4Space4 = new Space("Tyndall Ave Garage, Floor 4, Space 4");
 		
 		//Sixth Street Garage
-		Space s6gFloor1Space1 = new Space();
-		Space s6gFloor1Space2 = new Space();
-		Space s6gFloor1Space3 = new Space();
-		Space s6gFloor1Space4 = new Space();
+		Space s6gFloor1Space1 = new Space("Sixth Street Garage, Floor 1, Space 1");
+		Space s6gFloor1Space2 = new Space("Sixth Street Garage, Floor 1, Space 2");
+		Space s6gFloor1Space3 = new Space("Sixth Street Garage, Floor 1, Space 3");
+		Space s6gFloor1Space4 = new Space("Sixth Street Garage, Floor 1, Space 4");
 		
-		Space s6gFloor2Space1 = new Space();
-		Space s6gFloor2Space2 = new Space();
-		Space s6gFloor2Space3 = new Space();
-		Space s6gFloor2Space4 = new Space();
+		Space s6gFloor2Space1 = new Space("Sixth Street Garage, Floor 2, Space 1");
+		Space s6gFloor2Space2 = new Space("Sixth Street Garage, Floor 2, Space 2");
+		Space s6gFloor2Space3 = new Space("Sixth Street Garage, Floor 2, Space 3");
+		Space s6gFloor2Space4 = new Space("Sixth Street Garage, Floor 2, Space 4");
 		
-		Space s6gFloor3Space1 = new Space();
-		Space s6gFloor3Space2 = new Space();
-		Space s6gFloor3Space3 = new Space();
-		Space s6gFloor3Space4 = new Space();
+		Space s6gFloor3Space1 = new Space("Sixth Street Garage, Floor 3, Space 1");
+		Space s6gFloor3Space2 = new Space("Sixth Street Garage, Floor 3, Space 2");
+		Space s6gFloor3Space3 = new Space("Sixth Street Garage, Floor 3, Space 3");
+		Space s6gFloor3Space4 = new Space("Sixth Street Garage, Floor 3, Space 4");
 		
-		Space s6gFloor4Space1 = new Space();
-		Space s6gFloor4Space2 = new Space();
-		Space s6gFloor4Space3 = new Space();
-		Space s6gFloor4Space4 = new Space();
+		Space s6gFloor4Space1 = new Space("Sixth Street Garage, Floor 4, Space 1");
+		Space s6gFloor4Space2 = new Space("Sixth Street Garage, Floor 4, Space 2");
+		Space s6gFloor4Space3 = new Space("Sixth Street Garage, Floor 4, Space 3");
+		Space s6gFloor4Space4 = new Space("Sixth Street Garage, Floor 4, Space 4");
 		
 		//Second Street Garage
-		Space sgFloor1Space1 = new Space();
-		Space sgFloor1Space2 = new Space();
-		Space sgFloor1Space3 = new Space();
-		Space sgFloor1Space4 = new Space();
+		Space sgFloor1Space1 = new Space("Second Street Garage, Floor 1, Space 1");
+		Space sgFloor1Space2 = new Space("Second Street Garage, Floor 1, Space 2");
+		Space sgFloor1Space3 = new Space("Second Street Garage, Floor 1, Space 3");
+		Space sgFloor1Space4 = new Space("Second Street Garage, Floor 1, Space 4");
 		
-		Space sgFloor2Space1 = new Space();
-		Space sgFloor2Space2 = new Space();
-		Space sgFloor2Space3 = new Space();
-		Space sgFloor2Space4 = new Space();
+		Space sgFloor2Space1 = new Space("Second Street Garage, Floor 2, Space 1");
+		Space sgFloor2Space2 = new Space("Second Street Garage, Floor 2, Space 2");
+		Space sgFloor2Space3 = new Space("Second Street Garage, Floor 2, Space 3");
+		Space sgFloor2Space4 = new Space("Second Street Garage, Floor 2, Space 4");
 		
 		//Zone1 lot
-		Space z1LotSpace1 = new Space();
-		Space z1LotSpace2 = new Space();
-		Space z1LotSpace3 = new Space();
-		Space z1LotSpace4 = new Space();
-		Space z1LotSpace5 = new Space();
+		Space z1LotSpace1 = new Space("Zone 1 Lot 2147, Space 1");
+		Space z1LotSpace2 = new Space("Zone 1 Lot 2147, Space 2");
+		Space z1LotSpace3 = new Space("Zone 1 Lot 2147, Space 3");
+		Space z1LotSpace4 = new Space("Zone 1 Lot 2147, Space 4");
+		Space z1LotSpace5 = new Space("Zone 1 Lot 2147, Space 5");
 		
 		//Zone1 lot 1
-		Space z1Lot1Space1 = new Space();
-		Space z1Lot1Space2 = new Space();
-		Space z1Lot1Space3 = new Space();
-		Space z1Lot1Space4 = new Space();
-		Space z1Lot1Space5 = new Space();
+		Space z1Lot1Space1 = new Space("Zone 1 Lot 2021, Space 1");
+		Space z1Lot1Space2 = new Space("Zone 1 Lot 2021, Space 2");
+		Space z1Lot1Space3 = new Space("Zone 1 Lot 2021, Space 3");
+		Space z1Lot1Space4 = new Space("Zone 1 Lot 2021, Space 4");
+		Space z1Lot1Space5 = new Space("Zone 1 Lot 2021, Space 5");
 		
 		//Zone1 lot 2
-		Space z1Lot2Space1 = new Space();
-		Space z1Lot2Space2 = new Space();
-		Space z1Lot2Space3 = new Space();
-		Space z1Lot2Space4 = new Space();
-		Space z1Lot2Space5 = new Space();
+		Space z1Lot2Space1 = new Space("Zone 1 Lot 1172, Space 1");
+		Space z1Lot2Space2 = new Space("Zone 1 Lot 1172, Space 2");
+		Space z1Lot2Space3 = new Space("Zone 1 Lot 1172, Space 3");
+		Space z1Lot2Space4 = new Space("Zone 1 Lot 1172, Space 4");
+		Space z1Lot2Space5 = new Space("Zone 1 Lot 1172, Space 5");
 		
 		//Zone1 lot 3
-		Space z1Lot3Space1 = new Space();
-		Space z1Lot3Space2 = new Space();
-		Space z1Lot3Space3 = new Space();
-		Space z1Lot3Space4 = new Space();
-		Space z1Lot3Space5 = new Space();
+		Space z1Lot3Space1 = new Space("Zone 1 Lot 6091, Space 1");
+		Space z1Lot3Space2 = new Space("Zone 1 Lot 6091, Space 2");
+		Space z1Lot3Space3 = new Space("Zone 1 Lot 6091, Space 3");
+		Space z1Lot3Space4 = new Space("Zone 1 Lot 6091, Space 4");
+		Space z1Lot3Space5 = new Space("Zone 1 Lot 6091, Space 5");
 		
 		//South6 Lot
-		Space s6LotSpace1 = new Space();
-		Space s6LotSpace2 = new Space();
-		Space s6LotSpace3 = new Space();
-		Space s6LotSpace4 = new Space();
-		Space s6LotSpace5 = new Space();
+		Space s6LotSpace1 = new Space("Zone 6 Lot 7167, Space 1");
+		Space s6LotSpace2 = new Space("Zone 6 Lot 7167, Space 2");
+		Space s6LotSpace3 = new Space("Zone 6 Lot 7167, Space 3");
+		Space s6LotSpace4 = new Space("Zone 6 Lot 7167, Space 4");
+		Space s6LotSpace5 = new Space("Zone 6 Lot 7167, Space 5");
 		
 		//South6 lot 2
-		Space s6Lot2Space1 = new Space();
-		Space s6Lot2Space2 = new Space();
-		Space s6Lot2Space3 = new Space();
-		Space s6Lot2Space4 = new Space();
-		Space s6Lot2Space5 = new Space();	
+		Space s6Lot2Space1 = new Space("Zone 6 Lot 8138, Space 1");
+		Space s6Lot2Space2 = new Space("Zone 6 Lot 8138, Space 2");
+		Space s6Lot2Space3 = new Space("Zone 6 Lot 8138, Space 3");
+		Space s6Lot2Space4 = new Space("Zone 6 Lot 8138, Space 4");
+		Space s6Lot2Space5 = new Space("Zone 6 Lot 8138, Space 5");	
 		
 		
 		/*Add spaces to floors*/
@@ -470,40 +470,42 @@ public class Driver1 {
 		univParking.addLot(south6Lot1);
 		univParking.addLot(south6Lot2);
 		
+		
+		
 		 new ParkingGUI("test", univParking); 
 		
 		/*Checking garage info*/
-		for(Garage currGarage: univParking.getGarages()){
-			System.out.println("Info for " + currGarage.getName());
-			System.out.println("\tLocation:" + currGarage.getLocation());
-			System.out.println("\tNumber of Floors: " + currGarage.getFloors().size());
-		
-			/*Checking number of spaces on each floor of cherry Garage*/
-			for(Floor currFloor: currGarage.getFloors()){
-				System.out.println("\t\tNumber of spaces on Floor " + currFloor.getFloorNumber() + ": " + currFloor.getSpaces().size());
-			}
-		}
-		/*Checking lot info*/
-		for(Lot currLot: univParking.getLots()){
-			System.out.println("Info for " + currLot.getName());
-			System.out.println("\tLocation:" + currLot.getLocation());
-			System.out.println("\tNumber of Spaces: " + currLot.getSpaces().size());
-		}
-		
-		/*System.out.println("\nTesting filling spaces: ");
-		
-		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(0).fillSpace();
-		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(1).fillSpace();
-		*/
-		System.out.println("\tNumber of Spaces remaining on floor " + univParking.getGarages().get(0).getFloors().get(0).getFloorNumber() + 
-				" of " + univParking.getGarages().get(0).getName() + ": " + univParking.getGarages().get(0).getFloors().get(0).calcRemainingSpaces());
-		System.out.println("\nTesting Emptying Spaces:");
-		
-		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(0).emptySpace();
-		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(1).emptySpace();
-		
-		System.out.println("\tNumber of Spaces remaining on floor " + univParking.getGarages().get(0).getFloors().get(0).getFloorNumber() + 
-				" of " + univParking.getGarages().get(0).getName() + ": " + univParking.getGarages().get(0).getFloors().get(0).calcRemainingSpaces());
+//		for(Garage currGarage: univParking.getGarages()){
+//			System.out.println("Info for " + currGarage.getName());
+//			System.out.println("\tLocation:" + currGarage.getLocation());
+//			System.out.println("\tNumber of Floors: " + currGarage.getFloors().size());
+//		
+//			/*Checking number of spaces on each floor of cherry Garage*/
+//			for(Floor currFloor: currGarage.getFloors()){
+//				System.out.println("\t\tNumber of spaces on Floor " + currFloor.getFloorNumber() + ": " + currFloor.getSpaces().size());
+//			}
+//		}
+//		/*Checking lot info*/
+//		for(Lot currLot: univParking.getLots()){
+//			System.out.println("Info for " + currLot.getName());
+//			System.out.println("\tLocation:" + currLot.getLocation());
+//			System.out.println("\tNumber of Spaces: " + currLot.getSpaces().size());
+//		}
+//		
+//		/*System.out.println("\nTesting filling spaces: ");
+//		
+//		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(0).fillSpace();
+//		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(1).fillSpace();
+//		*/
+//		System.out.println("\tNumber of Spaces remaining on floor " + univParking.getGarages().get(0).getFloors().get(0).getFloorNumber() + 
+//				" of " + univParking.getGarages().get(0).getName() + ": " + univParking.getGarages().get(0).getFloors().get(0).calcRemainingSpaces());
+//		System.out.println("\nTesting Emptying Spaces:");
+//		
+//		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(0).emptySpace();
+//		univParking.getGarages().get(0).getFloors().get(0).getSpaces().get(1).emptySpace();
+//		
+//		System.out.println("\tNumber of Spaces remaining on floor " + univParking.getGarages().get(0).getFloors().get(0).getFloorNumber() + 
+//				" of " + univParking.getGarages().get(0).getName() + ": " + univParking.getGarages().get(0).getFloors().get(0).calcRemainingSpaces());
 	}
 
 }

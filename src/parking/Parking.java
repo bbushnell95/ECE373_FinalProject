@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public abstract class Parking implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected String name;
 	protected String location;
 	private String timesOpen;

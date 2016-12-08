@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 //Swing Imports
 import javax.swing.AbstractAction;
@@ -63,6 +65,7 @@ public class ParkingGUI extends JFrame{
 	private JMenuBar menuBar;
 	private JMenuItem menuLogin;
 	private JMenuItem menuLogout;
+	private JMenuItem menuNewUser;
 	private JMenuItem menuReserve;
 	private JMenuItem menuAddUser;
 	private JMenuItem menuDeleteUser;
@@ -224,30 +227,60 @@ public class ParkingGUI extends JFrame{
 	void updateUserParkingStatus() {
 		
 		int i;
+		boolean noSpaceFlag = false;
 		/*Checking garage info*/
 		parkingStatus.setText("");
 		
 		parkingStatus.append("User: " + university.getCurrentUser() + "\n");
-		parkingStatus.append("\n\nGarages\n");
-		for(Garage currGarage: university.getGarages()){
-			
-			parkingStatus.append(currGarage.getName() + " [" + currGarage.getLocation() + "]\n");
-		
-			/*Checking number of spaces on each floor of cherry Garage*/
-			for(Floor currFloor: currGarage.getFloors()){
-				parkingStatus.append("\tFloor " + currFloor.getFloorNumber() + ":");
+		for(User checkUser: university.getUsers()){
+			if(checkUser.getName().equals(university.getCurrentUser()) && !checkUser.getReservedSpace().getLocation().equals("unknown")){
+				parkingStatus.append("Reserved Spot: " + checkUser.getReservedSpace().getLocation());
+				noSpaceFlag = false;
+			}
+			else if(checkUser.getReservedSpace().getLocation().equals("unknown")){
+				noSpaceFlag = true;
+			}
+		}
+		if(noSpaceFlag){
+			parkingStatus.append("\n\nGarages\n");
+			for(Garage currGarage: university.getGarages()){
+
+				parkingStatus.append(currGarage.getName() + " [" + currGarage.getLocation() + "]\n");
+
+				/*Checking number of spaces on each floor of cherry Garage*/
+				for(Floor currFloor: currGarage.getFloors()){
+					parkingStatus.append("\tFloor " + currFloor.getFloorNumber() + ":");
+					i = 0;
+					for (Space currSpace: currFloor.getSpaces()) {
+						i++;
+						parkingStatus.append(" Space " + i + ": ");
+						if (currSpace.checkIfFull()) {
+							if (currSpace.getName().equals(university.getCurrentUser())) {
+								parkingStatus.append(currSpace.getName());
+							}
+							else {
+								parkingStatus.append("occupied");
+
+							}
+						}
+						else {
+							parkingStatus.append("free");
+						}
+					}
+					parkingStatus.append("\n");
+				}
+				parkingStatus.append("\n");
+			}
+			/*Checking lot info*/
+			parkingStatus.append("\nLots\n");
+			for(Lot currLot: university.getLots()){
+				parkingStatus.append(currLot.getName() + " [" + currLot.getLocation() + "]\n\t");
 				i = 0;
-				for (Space currSpace: currFloor.getSpaces()) {
+				for (Space currSpace: currLot.getSpaces()) {
 					i++;
 					parkingStatus.append(" Space " + i + ": ");
 					if (currSpace.checkIfFull()) {
-						if (currSpace.getName().equals(university.getCurrentUser())) {
-							parkingStatus.append(currSpace.getName());
-						}
-						else {
-							parkingStatus.append("occupied");
-							
-						}
+						parkingStatus.append(currSpace.getName());
 					}
 					else {
 						parkingStatus.append("free");
@@ -255,24 +288,6 @@ public class ParkingGUI extends JFrame{
 				}
 				parkingStatus.append("\n");
 			}
-			parkingStatus.append("\n");
-		}
-		/*Checking lot info*/
-		parkingStatus.append("\nLots\n");
-		for(Lot currLot: university.getLots()){
-			parkingStatus.append(currLot.getName() + " [" + currLot.getLocation() + "]\n\t");
-			i = 0;
-			for (Space currSpace: currLot.getSpaces()) {
-				i++;
-				parkingStatus.append(" Space " + i + ": ");
-				if (currSpace.checkIfFull()) {
-					parkingStatus.append(currSpace.getName());
-				}
-				else {
-					parkingStatus.append("free");
-				}
-			}
-			parkingStatus.append("\n");
 		}
 		
 	}
@@ -453,14 +468,15 @@ public class ParkingGUI extends JFrame{
 		popUpFrame = new JFrame(title);
 		popUpFrame.setSize(500, 400);
 		popUpFrame.setLayout(new GridLayout(0,1));
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
 		
 		//Create JLabels
 		JLabel text0 = new JLabel("You're spot has been reserved!" , SwingConstants.CENTER);
 		JLabel text1 = new JLabel("Review the information presented below" , SwingConstants.CENTER);
 		JLabel text2 = new JLabel("<html><br/>Garage: "+userParking.getName()+"</html>");
 		JLabel text4 = new JLabel("Spot: "+userSpotNum);
-		JLabel text5 = new JLabel("Start Time: "+startTime.getTime());
-		JLabel text6 = new JLabel("End Time: "+endTime.getTime());
+		JLabel text5 = new JLabel("Start Time: "+ dateFormat.format(startTime.getTime()));
+		JLabel text6 = new JLabel("End Time: "+ dateFormat.format(endTime.getTime()));
 		text0.setFont(new Font("Serif", Font.BOLD, 18));
 		text1.setFont(new Font("Serif", Font.BOLD, 18));
 		text2.setFont(new Font("Serif", Font.BOLD, 14));
@@ -577,6 +593,7 @@ private class exitListener implements ActionListener
 {
 	public void actionPerformed(ActionEvent e) 
 	{
+		UniversityParking.saveData(university);
 		System.exit(0);
 	}
 }
@@ -607,10 +624,40 @@ private class SpaceButtonListener implements ActionListener
 		int spaceNum = Integer.parseInt(((JButton) e.getSource()).getText().substring(6));
 		userSpotNum = spaceNum;
 		userSpot = userSpaces.get(spaceNum-1);
+		
+		//User can only have 1 space
+		for(Garage checkGarage: university.getGarages()){
+			for(Floor checkFloor: checkGarage.getFloors()){
+				for(Space checkSpace: checkFloor.getSpaces()){
+					if(checkSpace.getName() != null){
+						if(checkSpace.getName().compareTo(university.getCurrentUser()) == 0){
+							checkSpace.emptySpace();
+						}
+					}
+				}
+			}
+		}
+		
+		for(Lot checkLot: university.getLots()){
+			for(Space checkSpace: checkLot.getSpaces()){
+				if(checkSpace.getName() != null){
+					if(checkSpace.getName().compareTo(university.getCurrentUser()) == 0){
+						checkSpace.emptySpace();
+					}
+				}
+			}
+		}
+		
 		userSpot.fillSpace(endTime, university.getCurrentUser());
+		for(User checkUser: university.getUsers()){
+			if(checkUser.getName().compareTo(university.getCurrentUser()) == 0){
+				checkUser.setReservedSpace(userSpot);
+			}
+		}
+		
 		popUpFrame.setVisible(false);
 		popUpFrame.dispose();
-		createEndPopUp("Pick A Spot");	
+		createEndPopUp("Pick A Spot");
 	}
 }
 
@@ -645,7 +692,7 @@ private class NextButtonListener implements ActionListener
 		}
 		Calendar now = Calendar.getInstance();
 		startTime = Calendar.getInstance();
-		startTime.set(now.YEAR,now.MONTH,now.DAY_OF_MONTH,hrTime, minTime);
+		startTime.set(now.getTime().getYear(),now.getTime().getMonth(),now.getTime().getDate(),hrTime, minTime);
 		endTime = (Calendar) startTime.clone();
 		maxTime = (Calendar) startTime.clone();
 		maxTime.add(Calendar.MONTH, 1);

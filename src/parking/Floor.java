@@ -4,6 +4,10 @@ import java.util.*;
 
 
 public class Floor  implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int floorNumber;
 	private int spacesRemaining;
 	private ArrayList<Space> spaces;

@@ -8,9 +8,24 @@ public class Space implements Serializable{
 	private boolean isFull;
 	private Calendar endTime;
 	private String userName = null;
+	private String location = null;
 	
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	public Space(){
 		isFull = false;
+		location = "unknown";
+	}
+	
+	public Space(String l){
+		isFull = false;
+		location = l;
 	}
 	
 	public boolean checkIfFull(){
@@ -43,5 +58,6 @@ public class Space implements Serializable{
 		}
 		
 	}
+
 
 }

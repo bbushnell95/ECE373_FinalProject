@@ -18,8 +18,11 @@ public class UniversityParking implements Serializable{
 	private ArrayList<Garage> garages;
 	private ArrayList<Lot> lots;
 	private ArrayList<User> users;
-	
 	private String currentUser;
+	
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
+	}
 	
 	public UniversityParking(){
 		garages = new ArrayList<Garage>();
