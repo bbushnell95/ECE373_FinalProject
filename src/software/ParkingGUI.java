@@ -129,7 +129,20 @@ public class ParkingGUI extends JFrame{
 		mainFrame = new JFrame(title);
 		mainFrame.setSize(1000, 1000);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
-		
+	
+		mainFrame.setLayout(new FlowLayout());
+		//welcome message:
+		JLabel welcome1 = new JLabel("<html><font size=\"+2\">Welcome to the University of Arizona's Parking Reservation System!</font size><br><br>"+
+									  "<center>Reserve a parking spot in any of the University's affiliated garages</center>"+
+									  "<center>Log in or create a new user above with the menu above</center>"+
+								  	  "<center>Then you can check your currently reserved spots or reserve a new one</center></html>", SwingConstants.CENTER);
+		welcome1.setForeground(Color.BLACK);
+		welcome1.setFont(new Font("Serif", Font.BOLD, 14));
+		mainFrame.add(welcome1, SwingConstants.CENTER);
+
+		//JLabel photo = new JLabel(new ImageIcon(getClass().getClassLoader().getResource("download.jpg")));
+		//mainFrame.add(photo);
+	
 		// Menu
 		menuBar = new JMenuBar();
 
