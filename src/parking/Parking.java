@@ -10,10 +10,9 @@ public abstract class Parking implements Serializable{
 	private static final long serialVersionUID = 1L;
 	protected String name;
 	protected String location;
-	private String timesOpen;
 	private int numberSpaces;
 	private int remainingSpaces;
-	private int numberCars;
+
 	
 	public Parking(){
 		
@@ -35,13 +34,6 @@ public abstract class Parking implements Serializable{
 		this.location = location;
 	}
 
-	public String getTimesOpen() {
-		return timesOpen;
-	}
-
-	public void setTimesOpen(String timesOpen) {
-		this.timesOpen = timesOpen;
-	}
 
 	public int getNumberSpaces() {
 		return numberSpaces;
@@ -57,14 +49,6 @@ public abstract class Parking implements Serializable{
 
 	public void setRemainingSpaces(int remainingSpaces) {
 		this.remainingSpaces = remainingSpaces;
-	}
-
-	public int getNumberCars() {
-		return numberCars;
-	}
-
-	public void setNumberCars(int numberCars) {
-		this.numberCars = numberCars;
 	}
 	
 	public abstract int calcRemainingSpaces();

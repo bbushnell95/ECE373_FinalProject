@@ -9,7 +9,6 @@ public class Garage extends Parking{
 	 */
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Floor> floors;
-	private double cost;
 	private int x;
 	private int y;
 	
@@ -33,12 +32,6 @@ public class Garage extends Parking{
 	}
 	public void setFloors(ArrayList<Floor> floors) {
 		this.floors = floors;
-	}
-	public double getCost() {
-		return cost;
-	}
-	public void setCost(double cost) {
-		this.cost = cost;
 	}
 	
 	public void addFloor(Floor newFloor){

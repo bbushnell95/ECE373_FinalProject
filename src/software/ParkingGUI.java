@@ -788,7 +788,7 @@ private class NextButtonListener implements ActionListener
 			errorMessage("Start time must be after the current time! Try Again");
 		}
 		
-		if(now.getTime().getHours() < hrTime && now.getTime().getMinutes() > minTime ){
+		if(now.getTime().getHours() <= hrTime && now.getTime().getMinutes() > minTime ){
 			error = true;
 			errorMessage("Start time must be after the current time! Try Again");
 		}
