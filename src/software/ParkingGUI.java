@@ -88,9 +88,17 @@ public class ParkingGUI extends JFrame{
 	
 	public ParkingGUI(String windowTitle, UniversityParking univ1) 
 	{
+		UniversityParking tempParking = new UniversityParking();
+		
+		tempParking = UniversityParking.loadData(tempParking);
 		//use the univ passed through the drive if no saved file to load
-		//TODO:: this requires a saved file.. 
-		university = univ1;
+		//TODO:: this requires a saved file..
+		if(tempParking.getGarages().size() > 0){
+			university = tempParking;
+		}
+		else{
+			university = univ1;
+		}
 	//	university = UniversityParking.loadData(univ1);
 		university.checkExpiration();
 		createMain("University Parking");
